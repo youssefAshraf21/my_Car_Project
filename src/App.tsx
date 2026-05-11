@@ -7,6 +7,7 @@ import type { Car } from './types/car';
 import bmw from './assets/bmw340.jpg';
 import mercedes from './assets/c300.jpg';
 import Category from './components/Category/Category';
+import Footer from './components/Footer/Footer';
 
 function App() {
 
@@ -57,6 +58,7 @@ function App() {
         </div>
     </section>
     <Category />
+    <Footer />
   </div>
 
     
