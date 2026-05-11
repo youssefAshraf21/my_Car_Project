@@ -13,7 +13,7 @@ return (
     <nav className="bg-[#12121f] border-b border-white/5 text-white">
 
       {/* Navbar Container */}
-    <div className="max-w-6xl mx-auto px-6 h-[60px] flex items-center justify-between">
+    <div className="max-w-6xl mx-auto px-6 h-15 flex items-center justify-between">
 
         {/* Logo */}
         <h1 className="font-bold text-2xl italic">
@@ -34,7 +34,7 @@ return (
             }}
             className={`text-sm relative pb-1 duration-200
             ${active === link
-                ? "text-white after:absolute after:left-0 after:bottom-[-6px] after:w-full after:h-[2px] after:bg-orange-500"
+                ? "text-white after:absolute after:left-0 after:-bottom-1.5 after:w-full after:h-0.5 after:bg-orange-500"
                 : "text-slate-400 hover:text-white"
                 }`}
             >
@@ -55,25 +55,25 @@ return (
 
           {/* Hamburger Button */}
         <button
-            className="md:hidden flex flex-col gap-[5px]"
+            className="md:hidden flex flex-col gap-1.25"
             onClick={() => setMenuOpen(!menuOpen)}
         >
 
             <span
-            className={`w-6 h-[2px] bg-white duration-300
-            ${menuOpen ? "rotate-45 translate-y-[7px]" : ""}
+            className={`w-6 h-0.5 bg-white duration-300
+            ${menuOpen ? "rotate-45 translate-y-1.75" : ""}
             `}
             />
 
             <span
-            className={`w-6 h-[2px] bg-white duration-300
+            className={`w-6 h-0.5 bg-white duration-300
             ${menuOpen ? "opacity-0" : ""}
             `}
             />
 
             <span
-            className={`w-6 h-[2px] bg-white duration-300
-            ${menuOpen ? "-rotate-45 -translate-y-[7px]" : ""}
+            className={`w-6 h-0.5 bg-white duration-300
+            ${menuOpen ? "-rotate-45 -translate-y-1.75" : ""}
             `}
             />
 
