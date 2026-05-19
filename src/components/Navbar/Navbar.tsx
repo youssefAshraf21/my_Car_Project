@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaRegHeart } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const NavLinks = ["Home", "Cars", "Favorites", "Contact"];
 
@@ -25,21 +26,18 @@ return (
 
         {NavLinks.map((link) => (
 
-            <a
+            <Link
             key={link}
-            href={`#${link.toLowerCase()}`}
-            onClick={(e) => {
-                e.preventDefault();
-                setActive(link);
-            }}
-            className={`text-sm relative pb-1 duration-200
-            ${active === link
-                ? "text-white after:absolute after:left-0 after:-bottom-1.5 after:w-full after:h-0.5 after:bg-orange-500"
-                : "text-slate-400 hover:text-white"
-                }`}
+            to={link === "Home" ? "/" : `/${link.toLowerCase()}`}
+    onClick={() => setActive(link)}
+    className={`text-sm relative pb-1 duration-200
+    ${active === link
+    ? "text-white after:absolute after:left-0 after:-bottom-1.5 after:w-full after:h-0.5 after:bg-orange-500"
+    : "text-slate-400 hover:text-white"
+    }`}
             >
             {link}
-            </a>
+            </Link>
 
         ))}
 
@@ -92,22 +90,18 @@ return (
 
         {NavLinks.map((link) => (
 
-        <a
-            key={link}
-            href="#"
-            onClick={(e) => {
-            e.preventDefault();
-            setActive(link);
-            setMenuOpen(false);
-            }}
-            className={`block px-6 py-4 border-t border-white/5
+        <Link
+                key={link}
+                to={link === "Home" ? "/" : `/${link.toLowerCase()}`}
+                onClick={() => setActive(link)}
+            className={`text-sm relative pb-1 duration-200
             ${active === link
-                ? "bg-white/5 text-white"
-                : "text-slate-400 hover:text-white"
+            ? "text-white after:absolute after:left-0 after:-bottom-1.5 after:w-full after:h-0.5 after:bg-orange-500"
+            : "text-slate-400 hover:text-white"
             }`}
-        >
+            >
             {link}
-        </a>
+        </Link>
 
         ))}
 
