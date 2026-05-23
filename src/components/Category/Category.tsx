@@ -1,4 +1,3 @@
-import React from 'react';
 import suvIcon from '../../assets/suvCar.png';
 import sedanIcon from '../../assets/sedanCar.png';
 import electricIcon from '../../assets/flash.png';

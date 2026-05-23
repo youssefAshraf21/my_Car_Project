@@ -10,9 +10,9 @@ import type { Car } from '../../types/car';
 
     function CarCard({ car, isFavorite, toggleFavorite }: CarCardProps) {
     return (
-        <div className='bg-[#161B22] rounded-2xl overflow-hidden w-full max-w-[350px] shadow-lg hover:scale-105 transition duration-300'>
+        <div className='bg-[#161B22] rounded-2xl overflow-hidden w-full max-w-87.5 shadow-lg hover:scale-105 transition duration-300'>
         <img src={car.image} alt={car.name}
-            className='w-full h-[180px] object-cover' />
+            className='w-full h-45 object-cover' />
 
         <div className='p-4'>
             <h2 className='text-xl font-bold text-white'>{car.name}</h2>

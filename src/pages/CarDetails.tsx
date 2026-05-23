@@ -51,7 +51,7 @@
         </div>
 
         <main className='flex-1 max-w-6xl mx-auto w-full px-6 py-12 grid grid-cols-1 lg:grid-cols-2 gap-12'>
-            <div className='rounded-2xl overflow-hidden shadow-2xl bg-[#161B22] h-[380px]'>
+            <div className='rounded-2xl overflow-hidden shadow-2xl bg-[#161B22] h-95'>
             <img
                 src={car.image}
                 alt={car.name}

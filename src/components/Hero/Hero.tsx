@@ -1,10 +1,9 @@
-import React from 'react';
 import hero from '../../assets/hero.jpg';
 import { Link } from 'react-router-dom';
 function Hero() {
 
     return (
-        <section className='h-[600px] bg-cover bg-center bg-no-repeat'
+        <section className='h-150 bg-cover bg-center bg-no-repeat'
             style={{ backgroundImage: `url(${hero})` }}>
                 <div className='container mx-auto px-4'>
                     <div className='pt-20'>
