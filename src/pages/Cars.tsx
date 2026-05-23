@@ -3,30 +3,36 @@ import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
 import CarCard from '../components/CarCard/CarCard';
 import useAllCars from '../hooks/useAllCars';
+import type { Car } from '../types/car';
 
 const categories = ['All', 'Sports', 'SUV', 'Sedan', 'Electric'];
 
-const Cars = () => {
+// ✅ add props type
+type CarsProps = {
+    favorites: Car[];
+    toggleFavorite: (car: Car) => void;
+}
+
+// ✅ destructure props
+const Cars = ({ favorites, toggleFavorite }: CarsProps) => {
     const { cars, loading, error } = useAllCars();
     const [search, setSearch] = useState('');
     const [activeCategory, setActiveCategory] = useState('All');
 
     const filtered = cars.filter(car => {
-    const matchesSearch = car.name.toLowerCase().includes(search.toLowerCase());
-    const matchesCategory = activeCategory === 'All' || car.category === activeCategory;
-    return matchesSearch && matchesCategory;
-});
+        const matchesSearch = car.name.toLowerCase().includes(search.toLowerCase());
+        const matchesCategory = activeCategory === 'All' || car.category === activeCategory;
+        return matchesSearch && matchesCategory;
+    });
 
     return (
         <div className='bg-[#0B0C10] min-h-screen'>
             <Navbar />
 
-            {/* Full width header */}
             <div className='bg-[#161B22] px-12 py-6'>
                 <h1 className='text-4xl font-bold text-white'>All Cars</h1>
                 <p className='text-gray-400 mt-1'>Home / Cars</p>
 
-                {/* Search + Filter Bar */}
                 <div className='flex items-center gap-3 mt-4'>
                     <div className='flex items-center bg-[#0B0C10] border border-gray-700 rounded-lg px-3 py-2 gap-2'>
                         <svg className='w-4 h-4 text-gray-400' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
@@ -57,14 +63,18 @@ const Cars = () => {
                 </div>
             </div>
 
-            {/* Cars Grid */}
             <section className='px-12 py-10 max-w-7xl mx-auto'>
                 {loading && <p className="text-gray-400 text-center">Loading cars...</p>}
                 {error && <p className="text-red-400 text-center">Error: {error}</p>}
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
                     {filtered.map((car) => (
-                        <CarCard key={car.id} car={car} />
+                        <CarCard
+                            key={car.id}
+                            car={car}
+                            isFavorite={!!favorites.find(f => f.id === car.id)} // ✅
+                            toggleFavorite={toggleFavorite}                      // ✅
+                        />
                     ))}
                 </div>
             </section>
