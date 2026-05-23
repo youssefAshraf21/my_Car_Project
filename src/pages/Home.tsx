@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 import useCars from '../hooks/useCars';
 import type { Car } from '../types/car';
 
-// ✅ add props type
 type HomeProps = {
   favorites: Car[];
   toggleFavorite: (car: Car) => void;
@@ -40,8 +39,8 @@ const Home = ({ favorites, toggleFavorite }: HomeProps) => {
             <CarCard
               key={car.id}
               car={car}
-              isFavorite={!!favorites.find(f => f.id === car.id)} // ✅
-              toggleFavorite={toggleFavorite}                      // ✅
+              isFavorite={!!favorites.find(f => f.id === car.id)} 
+              toggleFavorite={toggleFavorite}                      
             />
           ))}
         </div>

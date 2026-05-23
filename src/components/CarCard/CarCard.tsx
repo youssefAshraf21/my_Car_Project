@@ -1,4 +1,5 @@
-    import type { Car } from '../../types/car';
+    import { Link } from 'react-router-dom';
+import type { Car } from '../../types/car';
     import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 
     type CarCardProps = {
@@ -19,11 +20,11 @@
             <p className='text-gray-300 text-lg font-semibold'>
                 ${car.price.toLocaleString()}
             </p>
-            <button className='border border-gray-500 text-gray-300 px-4 py-2 rounded-xl hover:bg-orange-500 hover:border-orange-500 hover:text-white transition duration-300 text-sm'>
+            
+            <Link to={`/CarDetails/${car.id}`} className='border border-gray-500 text-gray-300 px-4 py-2 rounded-xl hover:bg-orange-500 hover:border-orange-500 hover:text-white transition duration-300 text-sm'>
                 View Details
-            </button>
+            </Link>
 
-            {/* ✅ uses props instead of local state */}
             <button onClick={() => toggleFavorite(car)}>
                 {isFavorite
                 ? <AiFillHeart color="orange" size={24} />

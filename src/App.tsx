@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Cars from './pages/Cars';
 import Favorites from './pages/Favorites';
 import Contact from './pages/Contact';
+import CarDetails from './pages/CarDetails';
 
 function App() {
   const [favorites, setFavorites] = useState<Car[]>([]);
@@ -25,6 +26,10 @@ function App() {
       <Route path="/cars" element={<Cars favorites={favorites} toggleFavorite={toggleFavorite} />} />
       <Route path="/favorites" element={<Favorites favorites={favorites} toggleFavorite={toggleFavorite} />} />
       <Route path="/contact" element={<Contact />} />
+      <Route
+  path="/CarDetails/:id"
+  element={<CarDetails favorites={favorites} toggleFavorite={toggleFavorite} />}
+/>
     </Routes>
   );
 }

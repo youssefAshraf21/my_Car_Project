@@ -12,7 +12,6 @@
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        // your submit logic / API call here
         setSent(true);
     };
 

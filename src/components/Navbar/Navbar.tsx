@@ -13,7 +13,7 @@
     }`;
 
     function Navbar() {
-    const [menuOpen, setMenuOpen] = useState(false); // ✅ keep only this
+    const [menuOpen, setMenuOpen] = useState(false); 
 
     return (
         <nav className="bg-[#12121f] border-b border-white/5 text-white">
@@ -30,8 +30,8 @@
                 <NavLink
                 key={link}
                 to={link === "Home" ? "/" : `/${link.toLowerCase()}`}
-                end={link === "Home"} // ✅ prevents "/" matching every route
-                className={navClass}  // ✅ uses NavLink's isActive directly
+                end={link === "Home"} 
+                className={navClass}  
                 >
                 {link}
                 </NavLink>
@@ -61,8 +61,8 @@
             <NavLink
                 key={link}
                 to={link === "Home" ? "/" : `/${link.toLowerCase()}`}
-                end={link === "Home"} // ✅
-                className={navClass}  // ✅
+                end={link === "Home"} 
+                className={navClass}  
             >
                 {link}
             </NavLink>

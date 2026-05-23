@@ -72,8 +72,8 @@ const Cars = ({ favorites, toggleFavorite }: CarsProps) => {
                         <CarCard
                             key={car.id}
                             car={car}
-                            isFavorite={!!favorites.find(f => f.id === car.id)} // ✅
-                            toggleFavorite={toggleFavorite}                      // ✅
+                            isFavorite={!!favorites.find(f => f.id === car.id)} 
+                            toggleFavorite={toggleFavorite}                      
                         />
                     ))}
                 </div>

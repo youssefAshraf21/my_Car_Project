@@ -24,7 +24,7 @@ function Footer() {
                     <FaInstagram size={24} />
                 </a>
 
-                {/* Twitter (X) */}
+                {/* Twitter */}
                 <a href="#" className="w-10 h-10 rounded-full bg-[#161B22] border border-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:border-[#FF6600] transition-all duration-300">
                     <FaTwitter size={24} />
                 </a>
