@@ -7,5 +7,5 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  base: '/Car-Showroom/',
+  base: '/my_Car_Project/',
 })
